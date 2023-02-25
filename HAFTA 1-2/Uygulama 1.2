@@ -1,0 +1,17 @@
+# Import Library 
+import numpy as np
+import matplotlib.pyplot as plt 
+# Define Data 
+state = [“Florida”, “Texas”, “Vermont”] 
+urban = [65,70,55] 
+rural = [70,70,65]
+x_axis = np.arange(len(state)) 
+# Multi bar Chart 
+plt.bar(x_axis -0.2, urban, width=0.4, label = 'Urban') 
+plt.bar(x_axis +0.2, rural, width=0.4, label = 'Rural') 
+# Xticks 
+plt.xticks(x_axis, state) 
+# Add legend 
+plt.legend() 
+# Display 
+plt.show()
