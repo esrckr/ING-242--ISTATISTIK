@@ -1,0 +1,19 @@
+fig, ax = plt.subplots()
+
+def gradientbars(bars):
+    # set up the gradient for the cmap
+    grad = np.atleast_2d(np.linspace(0,1,256)).T
+    # reestablish the plot area
+    ax = bars[0].axes
+    lim = ax.get_xlim()+ax.get_ylim()
+    ax.axis(lim)
+    # color each bar
+    for bar in bars:
+        bar.set_facecolor("none")
+        x,y = bar.get_xy()
+        w, h = bar.get_width(), bar.get_height()
+        ax.imshow(grad, extent=[x,x+w,y,y+h], aspect="auto")
+
+gradientbars(ax.bar(df.a, df.b))
+
+plt.show()
