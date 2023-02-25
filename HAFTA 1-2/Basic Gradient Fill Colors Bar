@@ -1,3 +1,15 @@
+#Normal imports
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+#Gradient Color Bar Plots
+from matplotlib import cm
+from matplotlib.colors import ListedColormap, LinearSegmentedColormap
+from matplotlib import colors as mcolors, path
+
+#Some dummy data for us to plot
+df = pd.DataFrame({'a':[1,2,3,4,5,6], 'b':[4,5,6,3,7,1]})
+
 fig, ax = plt.subplots()
 
 def gradientbars(bars):
