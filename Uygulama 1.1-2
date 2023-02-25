@@ -1,0 +1,7 @@
+import pandas as pd
+data = ["Below Average", "Above Average", "Above Average", "Poor", "Above Average", "Average", "Above Average", "Average", "Above Average", "Below Average", "Average", "Excellent", "Above Average", "Average", "Above Average", "Above Average", "Below Average", "Poor", "Above Average", "Average"]
+# Create Data Frame using pandas library
+# .value_counts() counts the number of
+# occurrences of particular observation
+df = pd.Series(data).value_counts()
+print(df)
