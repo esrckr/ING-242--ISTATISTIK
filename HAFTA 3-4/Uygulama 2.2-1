@@ -1,0 +1,9 @@
+import pandas as pd
+import stemgraphic
+
+data = [71,85,62,75,78,86,90,53,68,79,
+     69,59,65,76,54,81,70,56,75,80,
+     63,92,68,73,52,80,60,57,74,82]
+y = pd.Series(data)
+fig, ax = stemgraphic.stem_graphic(y)
+fig.show()
