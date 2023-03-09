@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def dotplot(input_x, **args):
+    # Count how many times does each value occur
+    unique_values, counts = np.unique(input_x, return_counts=True)
+    # Convert 1D input into 2D array
+    scatter_x = [] # x values 
+    scatter_y = [] # corresponding y values
+    for idx, value in enumerate(unique_values):
+        for counter in range(1, counts[idx]+1):
+            scatter_x.append(value)
+            scatter_y.append(counter)
+
+    # draw dot plot using scatter() 
+    plt.scatter(scatter_x, scatter_y, **args)
+    
+    # Optional - show all unique values on x-axis. 
+    # Matplotlib might hide some of them  
+    plt.gca().set_xticks(unique_values)
+    plt.show()
+  
+data = np.array([91,78,93,57,75,52,99,80,97,62,71,69,72,89,66,75,79,75,72,
+               76,104,74,62,68,97,105,77,65,80,109,85,97,
+               88,68,83,68,71,69,67,74,62,82,98,101,79,105,79,69,62,73])
+dotplot(input_x=data)
