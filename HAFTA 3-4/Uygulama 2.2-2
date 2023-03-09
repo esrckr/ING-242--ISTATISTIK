@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+  
+data = [71,85,62,75,78,86,90,53,68,79,
+     69,59,65,76,54,81,70,56,75,80,
+     63,92,68,73,52,80,60,57,74,82]
+
+# separating the stem parts
+
+stems=[]
+for i in data:
+    i=i//10
+    stems.append(i)
+stems.sort()
+
+plt.ylabel('Data')   # for label at y-axis 
+plt.xlabel('stems')   # for label at x-axis
+plt.xlim(0, 10)   # limit of the values at x axis
+plt.stem(stems, data)   # required plot
+plt.show()
