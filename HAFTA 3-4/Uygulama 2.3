@@ -1,0 +1,9 @@
+from matplotlib import pyplot as plt
+import numpy as np
+# Creating dataset
+a = np.array([62, 55, 68, 47, 50, 41, 62, 39, 54, 70, 56, 70, 56, 47, 
+71, 55, 60, 42])
+# Creating histogram
+fig, ax = plt.subplots(figsize =(10, 7))
+ax.hist(a, bins = [30,40,42,50,60,70,80],color = "pink", hatch='o', edgecolor='k',fill=True)
+plt.show()
