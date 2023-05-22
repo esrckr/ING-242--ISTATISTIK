@@ -9,7 +9,7 @@ import math
 
 
 #print f distribution table
-print(scipy.stats.f.ppf(q=1-.005, dfn=6, dfd=8))
+#print(scipy.stats.f.ppf(q=1-.005, dfn=6, dfd=8))
 
 #p_values=[0.995,0.975,0.9,0.5,0.1,0.05,0.025,0.01,0.005]
 
@@ -27,7 +27,6 @@ dof1_values.append([90])
 dof1_values.append([120])    
 dof1_values.append([100000000000000])
 
-print(dof1_values)
 for i in range(0,len(dof1_values)):
     for j in dof2_values:
         dof1_values[i].append(round(scipy.stats.f.ppf(q=1-alpha, dfn=j, dfd=dof1_values[i][0]),2))
