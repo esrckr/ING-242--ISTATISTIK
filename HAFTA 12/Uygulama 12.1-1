@@ -1,0 +1,37 @@
+# Importing library
+from scipy.stats import f_oneway
+import scipy.stats
+import numpy as np
+from scipy.stats import f
+import matplotlib.pyplot as plt
+from tabulate import tabulate
+import math
+
+
+#print f distribution table
+print(scipy.stats.f.ppf(q=1-.005, dfn=6, dfd=8))
+
+#p_values=[0.995,0.975,0.9,0.5,0.1,0.05,0.025,0.01,0.005]
+
+alpha=0.05
+
+dof2_values=range(1,10)
+dof1_values=[]
+
+for i in range(1,30):
+    dof1_values.append([i])
+
+dof1_values.append([40])
+dof1_values.append([60])
+dof1_values.append([90])
+dof1_values.append([120])    
+dof1_values.append([100000000000000])
+
+print(dof1_values)
+for i in range(0,len(dof1_values)):
+    for j in dof2_values:
+        dof1_values[i].append(round(scipy.stats.f.ppf(q=1-alpha, dfn=j, dfd=dof1_values[i][0]),2))
+
+col_names=["df1\df2"]+list(dof2_values)
+
+print(tabulate(dof1_values,headers=col_names))
